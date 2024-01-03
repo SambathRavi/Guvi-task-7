@@ -1,8 +1,8 @@
 async function apiCall(){
     const res=await fetch('https://restcountries.com/v3.1/all')
     const countryDetails=await res.json()
-    console.log(countryDetails.filter(data=>(data.continents.includes('Asia')&&data.region==='Asia')))
-    console.log(countryDetails.filter(data=>(data.population<200000)))
+    console.log('Countries filter by continent and reglion is Asia :',countryDetails.filter(data=>(data.continents.includes('Asia')&&data.region==='Asia')))
+    console.log('Countries filter by less than 2lakhs population :',countryDetails.filter(data=>(data.population<200000)))
     countryDetails.forEach(data=>{
         console.log('name :', data.name.common,'captial:', data.capital, 'flag:',data.flag)
     })
